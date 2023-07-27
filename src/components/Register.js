@@ -9,9 +9,9 @@ export default function Register({ onRegister}) {
   return (
     <Form
       name='register'
-      title ='Регистрация'
-      button='Зарегистрироваться'
-      link={'Уже зарегистрированы? Войти'}
+      title ='Join & dream together!'
+      button='Sign up'
+      link={'Already there? Sign in then'}
       onSubmit={handleSubmit}
     />
   )

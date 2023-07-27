@@ -9,8 +9,8 @@ export default function Login({ onLogin }) {
   return (
     <Form
       name='login'
-      title ='Вход'
-      button='Вход'
+      title ='Hello! Time for dreaming?'
+      button='Sign in'
       onSubmit={handleSubmit}
     />
   )

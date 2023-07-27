@@ -31,8 +31,8 @@ export default function EditProfilePopup({ isOpen, isLoading, onClose, onUpdateU
       onClose={onClose}
       onSubmit={handleSubmit}
       name='edit-profile'
-      title='Редактировать профиль'
-      button={isLoading ? 'Сохранение...' : 'Сохранить'}
+      title='Edit your profile'
+      button={isLoading ? 'Saving...' : 'Save'}
     >
       <input
         name='name'

@@ -1,0 +1,11 @@
+.header__slogan {
+  color: rgb(145, 145, 145);
+  font-size: 14px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 531px) {
+  .header__slogan {
+    padding: 0 23px;
+  }
+}

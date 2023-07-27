@@ -250,8 +250,8 @@ export default function App() {
             issueOccured={issueOccured}
             onClose={closeAllPopups}
             titles={{
-              regSuccess: 'Вы успешно зарегистрировались!',
-              fail: 'Что-то пошло не так! Попробуйте ещё раз.'
+              regSuccess: 'You have signed up successfully!',
+              fail: 'Something went wrong! Please try again.'
             }}/>
       </CurrentUserContext.Provider>
     </div>

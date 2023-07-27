@@ -29,8 +29,8 @@ export default function AddPlacePopup({ isOpen, isLoading, onClose, onAddPlace }
         onClose={onClose}
         onSubmit={handleSubmit}
         name='add-card'
-        title='Новое место'
-        button={isLoading ? 'Создание...' : 'Создать'}>
+        title='New dream'
+        button={isLoading ? 'Creating...' : 'Create'}>
           <input
               name='name'
               required
@@ -38,7 +38,7 @@ export default function AddPlacePopup({ isOpen, isLoading, onClose, onAddPlace }
               maxLength='30'
               type='text'
               className='popup__input'
-              placeholder='Название'
+              placeholder='Name'
               value={name}
               onChange={handleNameChange}
             />
@@ -48,7 +48,7 @@ export default function AddPlacePopup({ isOpen, isLoading, onClose, onAddPlace }
               required
               type='url'
               className='popup__input'
-              placeholder='Ссылка на картинку'
+              placeholder='Image URL'
               value={link}
               onChange={handleLinkChange}
             />

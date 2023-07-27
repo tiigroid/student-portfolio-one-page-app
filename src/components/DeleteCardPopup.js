@@ -13,8 +13,8 @@ export default function DeleteCardPopup({ card, isOpen, isLoading, onClose, onCa
       onClose={onClose}
       onSubmit={handleSubmit}
       name='delete-card'
-      title='Вы уверены?'
-      button={isLoading ? 'Удаление...' : 'Да'}
+      title='Are you sure?'
+      button={isLoading ? 'Deleting...' : 'Yes'}
     />
   );
 }

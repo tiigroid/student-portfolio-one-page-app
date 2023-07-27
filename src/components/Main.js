@@ -21,20 +21,20 @@ export default function Main({
         <img
           className='profile__avatar'
           src={currentUser.avatar}
-          alt='Аватар пользователя'
+          alt='User avatar'
         />
         <div className='profile__info'>
           <h1 className='profile__name'>{currentUser.name}</h1>
           <p className='profile__about'>{currentUser.about}</p>
           <button
-            aria-label='редактировать профиль'
+            aria-label='edit profile'
             type='button'
             className='profile__button-edit button button_type_edit'
             onClick={onEditProfile}
           />
         </div>
         <button
-          aria-label='добавить место'
+          aria-label='add card'
           type='button'
           className='profile__button-add button button_type_add'
           onClick={onAddCard}

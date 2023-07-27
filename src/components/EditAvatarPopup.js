@@ -19,15 +19,15 @@ export default function EditAvatarPopup({ isOpen, isLoading, onClose, onUpdateAv
       onClose={onClose}
       onSubmit={handleSubmit}
       name='change-avatar'
-      title='Обновить аватар'
-      button={isLoading ? 'Сохранение...' : 'Сохранить'}
+      title='Change your avatar'
+      button={isLoading ? 'Saving...' : 'Save'}
     >
       <input
         name='avatar'
         required
         type='url'
         className='popup__input'
-        placeholder='Ссылка на картинку'
+        placeholder='Image URL'
         ref={avatar}
       />
       <span className='avatar-input-error popup__error'></span>

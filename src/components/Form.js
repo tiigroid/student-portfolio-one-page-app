@@ -36,7 +36,7 @@ export default function Form({ name, title, button, link, onSubmit }) {
             name='password'
             type='password'
             className='form__input'
-            placeholder='Пароль'
+            placeholder='Password'
             value={password}
             onChange={handlePasswordChange}
           />

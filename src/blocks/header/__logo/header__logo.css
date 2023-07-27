@@ -1,13 +1,17 @@
 .header__logo {
-  background-image: url(../../../images/logo.svg);
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+  line-height: 35px;
+  font-weight: 600;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 142px;
   height: 33px;
+  min-width: 300px;
   grid-column-start: 1;
   grid-row-start: 2;
-  padding: 45px 0 40px;
+  padding: 45px 0 0px;
 }
 
 @media screen and (max-width: 531px) {
@@ -15,7 +19,7 @@
     width: 104px;
     height: 25px;
     margin-left: 30px;
-    padding: 27px 0 31px;
+    padding: 27px 0 0px;
     grid-row-start: 3;
   }
 }
