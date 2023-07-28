@@ -124,6 +124,6 @@ class Api {
   }
 }
 
-const api = new Api('https://tiigroid.hopto.org');
+const api = new Api('https://tiigroid.hopto.org/dream-app');
 
 export default api;
