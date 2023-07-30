@@ -88,7 +88,7 @@ export default function App() {
   function handleLogin(email, password) {
     api.login(email, password)
     .then(() => {
-      renderPage()
+      renderPage();
       setIsLoggedIn(true);
       history.push('/student-portfolio-one-page-app');
     })

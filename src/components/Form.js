@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Form({ name, title, button, link, onSubmit }) {
+export default function Form({ name, title, button, linktext, link, onSubmit }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,7 +46,7 @@ export default function Form({ name, title, button, link, onSubmit }) {
             className='form__button-submit button button_type_submit'>
           {button}
           </button>
-          <Link to='/sign-in' className='form__link'>{link}</Link>
+          <Link to={link} className='form__link'>{linktext}</Link>
         </form>
       </section>
   )

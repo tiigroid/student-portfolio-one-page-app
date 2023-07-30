@@ -11,7 +11,8 @@ export default function Login({ onLogin }) {
       name='login'
       title ='Hello! Time for dreaming?'
       button='Sign in'
-      link={'Not there yet? Sign up then'}
+      linktext={'Not there yet? Sign up then'}
+      link={'/student-portfolio-one-page-app/sign-up'}
       onSubmit={handleSubmit}
     />
   )

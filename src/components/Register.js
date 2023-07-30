@@ -11,7 +11,8 @@ export default function Register({ onRegister}) {
       name='register'
       title ='Join & dream together!'
       button='Sign up'
-      link={'Already there? Sign in then'}
+      linktext={'Already there? Sign in then'}
+      link={'/student-portfolio-one-page-app/sign-in'}
       onSubmit={handleSubmit}
     />
   )

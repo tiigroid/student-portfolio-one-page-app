@@ -4,7 +4,7 @@ class Api {
   }
 
   _request(url, options) {
-    return fetch(url, options).then(res => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    return fetch(url, options).then(res => res.ok ? res.json() : Promise.reject(res))
   }
 
   register(email, password) {
