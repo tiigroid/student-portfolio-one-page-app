@@ -12,7 +12,7 @@ export default function Register({ onRegister}) {
       title ='Join & dream together!'
       button='Sign up'
       linktext={'Already there? Sign in then'}
-      link={'/student-portfolio-one-page-app/sign-in'}
+      link={'/sign-in'}
       onSubmit={handleSubmit}
     />
   )

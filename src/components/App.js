@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import api from '../utils/api';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import ProtectedRoute from './ProtectedRoute';
@@ -32,7 +32,7 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cards, setCards] = useState([]);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     checkToken()
@@ -40,12 +40,12 @@ export default function App() {
       if (res) {
         renderPage();
         setIsLoggedIn(true);
-        history.push('/student-portfolio-one-page-app');
+        navigate('/');
       }
     })
     .catch(() => {
       setIsLoggedIn(false);
-      history.push('/student-portfolio-one-page-app/sign-in');
+      navigate('/sign-in');
     })
   }, []);
 
@@ -79,7 +79,7 @@ export default function App() {
     api.register(email, password)
     .then(() => {
       setIssueOccured(false);
-      history.push('/student-portfolio-one-page-app')
+      navigate('/')
     })
     .catch(() => setIssueOccured(true))
     .finally(() => setIsInfoPopupOpen(true))
@@ -90,7 +90,7 @@ export default function App() {
     .then(() => {
       renderPage();
       setIsLoggedIn(true);
-      history.push('/student-portfolio-one-page-app');
+      navigate('/');
     })
     .catch(() => {
       setIssueOccured(true);
@@ -192,11 +192,9 @@ export default function App() {
         <Header
           userEmail={userEmail}
           onLogout={handleLogout} />
-          <Switch>
-            <ProtectedRoute
-              exact path='/student-portfolio-one-page-app'
-              isLoggedIn={isLoggedIn}
-              components={
+          <Routes>
+            <Route exact path='/' element={
+            <ProtectedRoute isLoggedIn={isLoggedIn} components={
               <>
               <Main
                 cards={cards}
@@ -208,18 +206,18 @@ export default function App() {
                 onDeleteClick={handleDeleteClick} />
               <Footer />
               </>
-              }
-            />
-            <Route path='/student-portfolio-one-page-app/sign-up'>
+              }/>
+            }/>
+            <Route path='/sign-up' element={
               <Register onRegister={handleRegister}/>
-            </Route>
-            <Route path='/student-portfolio-one-page-app/sign-in'>
+            }/>
+            <Route path='/sign-in' element={
               <Login onLogin={handleLogin}/>
-            </Route>
-            <Route path='/student-portfolio-one-page-app/*'>
+            }/>
+            <Route path='*' element={
               <PageNotFound />
-            </Route>
-          </Switch>
+            }/>
+          </Routes>
           <EditProfilePopup
             isOpen={isEditProfilePopupOpen}
             isLoading={isLoading}
