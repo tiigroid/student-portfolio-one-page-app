@@ -10,7 +10,6 @@ class Api {
   register(email, password) {
     return this._request(`${this._baseUrl}/signup`, {
       method: 'POST',
-      credentials: 'include',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -124,6 +123,6 @@ class Api {
   }
 }
 
-const api = new Api('https://tiigroid.hopto.org/dream-app');
+const api = new Api('https://tiigroid.hopto.org/dream/api');
 
 export default api;
