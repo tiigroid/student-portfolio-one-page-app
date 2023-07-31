@@ -29,50 +29,44 @@ export default function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   const [userEmail, setUserEmail] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn'));
   const [cards, setCards] = useState([]);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkToken()
-    .then(res => {
-      if (res) {
-        renderPage();
-        setIsLoggedIn(true);
-        navigate('/');
-      }
-    })
-    .catch(() => {
-      setIsLoggedIn(false);
-      navigate('/sign-in');
-    })
+    if (isLoggedIn) {
+      renderPage()
+        .catch(err => {
+          err.status === 401 && handleAuthorization(false);
+        });
+    }
   }, []);
 
-  function checkToken() {
-    const token = document.cookie
-    .split('; ')
-    .filter(c => c.includes('jwt='))
-    .toString()
-
-    if (token) {
-      return Promise.resolve(true)
-    } else {
-      return Promise.resolve(false)
-    }
+  function renderPage() {
+    return Promise.all([
+      api.getUserData()
+        .then(data => {
+          setUserEmail(data.email);
+          setCurrentUser(data);
+        }),
+      api.getInitialCards()
+        .then(initialCards => {
+          setCards(initialCards.reverse());
+      })
+    ])
   }
 
-  function renderPage() {
-    api.getUserData()
-      .then(data => {
-        setUserEmail(data.email);
-        setCurrentUser(data)
-    })
-
-    api.getInitialCards()
-      .then(initialCards => {
-        setCards(initialCards.reverse())
-    })
+  function handleAuthorization(authorized) {
+    if (authorized) {
+      localStorage.setItem('isLoggedIn', 'true');
+      setIsLoggedIn(true);
+      navigate('/');
+    } else {
+      localStorage.removeItem('isLoggedIn');
+      setIsLoggedIn(false);
+      navigate('/sign-in');
+    }
   }
 
   function handleRegister(email, password) {
@@ -89,8 +83,7 @@ export default function App() {
     api.login(email, password)
     .then(() => {
       renderPage();
-      setIsLoggedIn(true);
-      navigate('/');
+      handleAuthorization(true);
     })
     .catch(() => {
       setIssueOccured(true);
@@ -102,7 +95,7 @@ export default function App() {
     api.logout()
     .then(res => {
       if (res.message === 'Выход') {
-        setIsLoggedIn(false);
+        handleAuthorization(false);
       }
     })
     .catch(err => alert(err));
