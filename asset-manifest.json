@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/student-portfolio-one-page-app/static/css/main.0f9c07b7.css",
-    "main.js": "/student-portfolio-one-page-app/static/js/main.312c04c1.js",
+    "main.css": "/student-portfolio-one-page-app/static/css/main.60b2716c.css",
+    "main.js": "/student-portfolio-one-page-app/static/js/main.09aea565.js",
     "static/js/787.7fafe8ea.chunk.js": "/student-portfolio-one-page-app/static/js/787.7fafe8ea.chunk.js",
     "static/media/Inter-Medium.woff": "/student-portfolio-one-page-app/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
     "static/media/Inter-Black.woff": "/student-portfolio-one-page-app/static/media/Inter-Black.c6938660eec019fefd68.woff",
@@ -19,12 +19,12 @@
     "static/media/icon_close.svg": "/student-portfolio-one-page-app/static/media/icon_close.039f1f5203f653b4bacd.svg",
     "static/media/icon_add.svg": "/student-portfolio-one-page-app/static/media/icon_add.bed8c136e13907f5eefb.svg",
     "static/media/icon_more.svg": "/student-portfolio-one-page-app/static/media/icon_more.6317f1ef9c759b5bd9ac.svg",
-    "main.0f9c07b7.css.map": "/student-portfolio-one-page-app/static/css/main.0f9c07b7.css.map",
-    "main.312c04c1.js.map": "/student-portfolio-one-page-app/static/js/main.312c04c1.js.map",
+    "main.60b2716c.css.map": "/student-portfolio-one-page-app/static/css/main.60b2716c.css.map",
+    "main.09aea565.js.map": "/student-portfolio-one-page-app/static/js/main.09aea565.js.map",
     "787.7fafe8ea.chunk.js.map": "/student-portfolio-one-page-app/static/js/787.7fafe8ea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f9c07b7.css",
-    "static/js/main.312c04c1.js"
+    "static/css/main.60b2716c.css",
+    "static/js/main.09aea565.js"
   ]
 }
